@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChristmasSMP</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #0f2a1a, #050a06);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 26px;
+      padding: 55px 65px;
+      max-width: 900px;
+      width: 92%;
+      text-align: center;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(14px);
+      animation: fadeUp 1s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      font-size: 64px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ff2a2a, #ffd36b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+      animation: glow 2.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(255, 80, 80, 0.3); }
+      to { text-shadow: 0 0 25px rgba(255, 80, 80, 0.8); }
+    }
+
+    .subtitle {
+      font-size: 19px;
+      opacity: 0.9;
+      margin-bottom: 35px;
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 22px;
+      margin-bottom: 45px;
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 22px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info-box:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+
+    .info-box h3 { font-size: 14px; opacity: 0.75; margin-bottom: 6px; }
+    .info-box p { font-size: 19px; font-weight: 700; }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .btn {
+      padding: 15px 34px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #ff2a2a, #ff9b6b);
+      color: white;
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.18);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55);
+    }
+
+    .section { margin-top: 55px; }
+
+    .section h2 {
+      margin-bottom: 25px;
+      color: #ffd36b;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .rules {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      font-size: 15px;
+    }
+
+    .rules li {
+      background: rgba(255,255,255,0.07);
+      border-radius: 18px;
+      padding: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .rules li:hover { transform: translateY(-6px); }
+
+    .shop {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .shop-item {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border-radius: 20px;
+      padding: 26px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .shop-item:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.65);
+    }
+
+    .shop-item h3 { color: #ff6b6b; margin-bottom: 12px; font-size: 22px; }
+
+    .shop-item span {
+      display: block;
+      margin-top: 14px;
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 13px;
+      opacity: 0.6;
+    }
+  /* Snowfall */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      font-size: 14px;
+      pointer-events: none;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">❄ ChristmasSMP</div>
+    <div class="subtitle">SMP Server mit Citybuild, exklusiven Crates & starker Community</div>
+
+    <div class="info">
+      <div class="info-box"><h3>Version</h3><p>1.20.4+</p></div>
+      <div class="info-box"><h3>Lobby IP</h3><p>mcmodsserver.ddns.net:57048</p></div>
+      <div class="info-box"><h3>Status</h3><p>🟢 Online</p></div>
+    </div>
+
+    <div class="buttons">
+      <a href="#" class="btn primary">Jetzt beitreten</a>
+      <a href="https://discord.gg/7NcCyybUDV" target="_blank" class="btn secondary">Discord beitreten</a>
+    </div>
+
+    <div class="section">
+      <h2>📜 SMP Regeln</h2>
+      <ul class="rules">
+        <li>❌ Kein Hacken, Cheaten oder X-Ray</li>
+        <li>🤝 Respektvoller Umgang mit Spielern & Team</li>
+        <li>💬 Kein Spam, keine Beleidigungen</li>
+        <li>👤 Angemessene Namen & Skins</li>
+        <li>⚠️ Team-Anweisungen sind zu befolgen</li>
+        <li>🚫 Bugs & Exploits dürfen nicht ausgenutzt werden</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🏙️ Citybuild Regeln</h2>
+      <ul class="rules">
+        <li>🏠 Grundstücke anderer Spieler respektieren</li>
+        <li>🚧 Keine unerlaubten Änderungen an fremden Builds</li>
+        <li>📏 Baue nur auf deinem zugewiesenen Bereich</li>
+        <li>🌍 Umweltfreundliches Bauen (keine unnötige Zerstörung)</li>
+        <li>⚖️ Citybuild-Regeln haben Vorrang im City-Gebiet</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🛒 Shop</h2>
+      <div class="shop">
+        <div class="shop-item">
+          <h3>👑 Elite Rang</h3>
+          <p>✔️ Exklusive Commands<br>✔️ Chat-Prefix<br>✔️ Extra Vorteile</p>
+          <a href="https://discord.gg/7NcCyybUDV" target="_blank" class="btn primary" style="margin-top:15px;display:inline-block">Mit Paysafecard kaufen</a>
+          <span>Zahlung über Paysafecard<br>PayPal auf Anfrage via Discord</span>
+        </div>
+        <div class="shop-item">
+          <h3>🎁 Secret Crate</h3>
+          <p>🎲 Seltene Items<br>💎 OP-Belohnungen</p>
+          <a href="https://discord.gg/7NcCyybUDV" target="_blank" class="btn primary" style="margin-top:15px;display:inline-block">Mit Paysafecard kaufen</a>
+          <span>Zahlung über Paysafecard<br>PayPal auf Anfrage via Discord</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 ChristmasSMP • Alle Inhalte sind urheberrechtlich geschützt.<br>
+      Unerlaubte Nutzung, Vervielfältigung oder Betrug kann rechtliche Schritte nach sich ziehen.<br>
+      Bei schwerwiegenden Fällen behalten wir uns vor, Strafverfolgungsbehörden einzuschalten.
+    </footer>
+
+  <script>
+    // Snowfall generation
+    const snowCount = 40;
+    for (let i = 0; i < snowCount; i++) {
+      const snow = document.createElement('div');
+      snow.className = 'snowflake';
+      snow.textContent = '❄';
+      snow.style.left = Math.random() * 100 + 'vw';
+      snow.style.animationDuration = 5 + Math.random() * 10 + 's';
+      snow.style.fontSize = 10 + Math.random() * 16 + 'px';
+      document.body.appendChild(snow);
+    }
+  </script>
+  </div>
+</body>
+</html>
